@@ -33,7 +33,6 @@ function App() {
   const [successMessage, setSuccessMessage] = useState(null);
   const notificationBellRef = useRef();
   const userId = users && users.length > 0 ? users[0]._id : null;
-  const currentUser = users && users.length > 0 ? users[0] : null;
 
   // Show success message and clear after 3 seconds
   const showSuccess = (message) => {
@@ -89,7 +88,7 @@ function App() {
   // Fetch tasks whenever selectedProject changes
   useEffect(() => {
     fetchTasks();
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedProject]);
 
   // Fetch notifications for user
@@ -698,7 +697,6 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center text-white/80 text-sm">
             <p>&copy; {new Date().getFullYear()} Task Management System</p>
-            <p className="mt-1">Email notifications are enabled for task assignments and deadlines</p>
           </div>
         </div>
       </footer>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getUserSchedule, requestVacation } from '../api';
+import { getUserSchedule } from '../api';
 
 const TaskCard = ({ task, users, onEdit, onDelete, onSuccess, onError }) => {
   const [isEditing, setIsEditing] = useState(false);
